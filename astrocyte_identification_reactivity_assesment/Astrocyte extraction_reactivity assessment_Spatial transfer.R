@@ -39,6 +39,8 @@ human_hMSN_6M <- RunUMAP(human_hMSN_6M, reduction.name = "umap.cca", dims=1:30)
 human_hMSN_6M <- FindClusters(human_hMSN_6M, resolution = 1, cluster.name = "integrated_clusters_k1")
 human_hMSN_6M <- FindClusters(human_hMSN_6M, resolution = 0.5, cluster.name = "integrated_clusters_k0.5")
 human_hMSN_6M <- FindClusters(human_hMSN_6M, resolution = 0.45, cluster.name = "integrated_clusters_k0.45")
+human_hMSN_6M <- FindClusters(human_hMSN_6M, resolution = 0.35, cluster.name = "integrated_clusters_k0.35")
+human_hMSN_6M <- FindClusters(human_hMSN_6M, resolution = 0.3, cluster.name = "integrated_clusters_k0.3")
 human_hMSN_6M <- FindClusters(human_hMSN_6M, resolution = 1.5, cluster.name = "integrated_clusters_k1.5")
 human_hMSN_6M <- FindClusters(human_hMSN_6M, resolution = 0.1, cluster.name = "integrated_clusters_k0.1")
 
@@ -117,7 +119,7 @@ FeaturePlot(human_hMSN_6M, features = "Astrocyte_score1", reduction = "umap.cca"
                                                                                                                                     axis.line = element_blank())
 
 
-Idents(human_hMSN_6M) <- human_hMSN_6M$integrated_clusters_k0.45
+Idents(human_hMSN_6M) <- human_hMSN_6M$integrated_clusters_k0.5
 Astrocyte_subset <- subset(human_hMSN_6M, idents=c("0", "1", "2", "4", "7"))
 
 
